@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Background?>
+<?import javafx.scene.layout.BackgroundFill?>
+<?import javafx.scene.layout.CornerRadii?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.template.ResultsController">
+    <background><Background><fills><BackgroundFill><fill><Color red="0.95" green="0.96" blue="0.98" /></fill></BackgroundFill></fills></Background></background>
+    <children>
+        <AnchorPane prefHeight="70.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #0a192f, #0077b6);">
+            <background>
+                <Background><fills><BackgroundFill>
+
+                </BackgroundFill></fills></Background>
+            </background>
+            <effect><DropShadow offsetY="3.0"><color><Color opacity="0.3" /></color></DropShadow></effect>
+            <children>
+                <Label layoutX="30.0" layoutY="18.0" text="Best Matches" textFill="WHITE"><font><Font name="System Bold" size="24.0" /></font></Label>
+            <Button layoutX="754.0" layoutY="21.0" onAction="#Backtosearch" text="Back to Search" textFill="#0a192f">
+               <background>
+                  <Background>
+                     <fills>
+                        <BackgroundFill>
+                           <fill>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </fill>
+                           <radii>
+                              <CornerRadii radius="5.0" />
+                           </radii>
+                        </BackgroundFill>
+                     </fills>
+                  </Background>
+               </background>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Label fx:id="lblFee" layoutX="250.0" layoutY="22.0" prefHeight="18.0" prefWidth="469.0" textFill="#ece6e6">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+
+        <ScrollPane fitToWidth="true" layoutY="70.0" prefHeight="530.0" prefWidth="900.0" style="-fx-background-color: transparent;">
+            <background><Background><fills><BackgroundFill><fill><Color red="0.95" green="0.96" blue="0.98" /></fill></BackgroundFill></fills></Background></background>
+            <content>
+                <VBox fx:id="resultsContainer" alignment="TOP_CENTER" spacing="20.0">
+                    <padding><Insets bottom="30.0" left="50.0" right="50.0" top="30.0" /></padding>
+
+                </VBox>
+            </content>
+        </ScrollPane>
+    </children>
+</AnchorPane>

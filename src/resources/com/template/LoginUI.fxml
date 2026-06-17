@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Background?>
+<?import javafx.scene.layout.BackgroundFill?>
+<?import javafx.scene.layout.CornerRadii?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.template.LoginController">
+    <background>
+        <Background><fills><BackgroundFill><fill><Color red="0.95" green="0.96" blue="0.98" /></fill></BackgroundFill></fills></Background>
+    </background>
+    <children>
+
+        <AnchorPane prefHeight="650.0" prefWidth="454.0" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #0a192f, #0077b6);">
+            <background>
+                <Background>
+                    <fills>
+                        <BackgroundFill>
+                            <fill>
+                                <LinearGradient endX="1.0" endY="1.0" startX="0.0" startY="0.0">
+                                    <stops>
+                                        <Stop color="#0a192f" offset="0.0" />
+
+                                        <Stop color="#0077b6" offset="1.0" />
+
+                                    </stops>
+                                </LinearGradient>
+                            </fill>
+                        </BackgroundFill>
+                    </fills>
+                </Background>
+            </background>
+            <effect><DropShadow radius="20.0" width="40.0"><color><Color opacity="0.5" /></color></DropShadow></effect>
+            <children>
+                <VBox alignment="CENTER" layoutX="40.0" layoutY="200.0" prefWidth="340.0" spacing="15.0" />
+            <Label layoutX="168.0" layoutY="200.0" text="TAK" textFill="#dfd7d7">
+               <font>
+                  <Font name="System Bold" size="42.0" />
+               </font>
+            </Label>
+            <Label layoutX="127.0" layoutY="283.0" text="LIMITED" textFill="#dfd7d7">
+               <font>
+                  <Font name="System Bold" size="42.0" />
+               </font>
+            </Label>
+            <Label layoutX="78.0" layoutY="378.0" text="find your dream home or tenant" textFill="#dfd7d7">
+               <font>
+                  <Font name="System Italic" size="19.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+
+
+        <VBox alignment="CENTER_LEFT" layoutX="486.0" layoutY="42.0" prefHeight="578.0" prefWidth="386.0" spacing="20.0">
+            <background>
+                <Background>
+                    <fills>
+                        <BackgroundFill>
+                            <fill><Color red="1.0" green="1.0" blue="1.0" /></fill>
+                            <radii><CornerRadii radius="15.0" /></radii>
+                        </BackgroundFill>
+                    </fills>
+                </Background>
+            </background>
+            <padding><Insets bottom="40.0" left="40.0" right="40.0" top="40.0" /></padding>
+            <effect><DropShadow offsetY="5.0" radius="15.0"><color><Color opacity="0.1" /></color></DropShadow></effect>
+
+            <Label text="Welcome Back" textFill="#0a192f"><font><Font name="System Bold" size="28.0" /></font></Label>
+            <Label text="Sign in to continue to your portal" textFill="#6b7280"><font><Font size="14.0" /></font><VBox.margin><Insets top="-15.0" /></VBox.margin></Label>
+
+            <HBox spacing="25.0">
+                <RadioButton fx:id="rbOwner" selected="true" text="Owner" textFill="#111827">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                    <toggleGroup><ToggleGroup fx:id="roleGroup" /></toggleGroup>
+                </RadioButton>
+                <RadioButton text="Tenant" textFill="#111827" toggleGroup="$roleGroup"><font><Font name="System Bold" size="14.0" /></font></RadioButton>
+            </HBox>
+
+            <VBox spacing="8.0">
+                <Label text="USERNAME" textFill="#6b7280"><font><Font name="System Bold" size="11.0" /></font></Label>
+                <TextField fx:id="txtUsername" prefHeight="45.0" promptText="Enter your username"><font><Font size="14.0" /></font></TextField>
+            </VBox>
+
+            <VBox spacing="8.0">
+                <Label text="PASSWORD" textFill="#6b7280"><font><Font name="System Bold" size="11.0" /></font></Label>
+                <PasswordField fx:id="txtPassword" prefHeight="45.0" promptText="Enter your password"><font><Font size="14.0" /></font></PasswordField>
+            </VBox>
+
+            <Label fx:id="lblError" textFill="#dc2626"><font><Font name="System Bold" size="12.0" /></font></Label>
+
+            <Button onAction="#handleLogin" prefHeight="50.0" prefWidth="350.0" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #0a192f, #0077b6);" text=" LOGIN" textFill="WHITE">
+                <background>
+                    <Background>
+                        <fills>
+                            <BackgroundFill>
+                                <fill>
+                                    <LinearGradient endX="1.0" endY="0.0" startX="0.0" startY="0.0">
+                                        <stops>
+                                            <Stop color="#00b4d8" offset="0.0" />
+                                            <Stop color="#0077b6" offset="1.0" />
+                                        </stops>
+                                    </LinearGradient>
+                                </fill>
+                                <radii><CornerRadii radius="8.0" /></radii>
+                            </BackgroundFill>
+                        </fills>
+                    </Background>
+                </background>
+                <font><Font name="System Bold" size="16.0" /></font>
+                <effect><DropShadow offsetY="3.0"><color><Color opacity="0.2" /></color></DropShadow></effect>
+            </Button>
+
+            <Button onAction="#goToSignup" prefHeight="45.0" prefWidth="350.0" text="Create new account" textFill="#0077b6">
+                <background><Background><fills><BackgroundFill><fill><Color red="1.0" green="1.0" blue="1.0" /></fill></BackgroundFill></fills></Background></background>
+                <font><Font name="System Bold" size="14.0" /></font>
+            </Button>
+        </VBox>
+    </children>
+</AnchorPane>
