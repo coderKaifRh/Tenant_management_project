@@ -59,24 +59,20 @@ Replace `YOUR_MYSQL_PASSWORD` with your local MySQL root password, OR pass it as
 
 ## ▶️ Running the Application
 
-### Option A: Using IntelliJ IDEA (1-Click Run ▶️)
+### Option A: 1-Click Double-Click Run (No IDE / IntelliJ Needed! ⚡)
+- **Windows:** Simply double-click **`run.bat`**! It will verify Java, automatically download any missing dependencies, and launch the application immediately.
+- **macOS / Linux:** Run `./run.sh` in terminal.
+
+### Option B: Using IntelliJ IDEA (1-Click Run ▶️)
 1. Open IntelliJ IDEA and select **Open**.
 2. Select the cloned `Tenant_management_project` folder (or open `pom.xml`).
-3. IntelliJ will automatically detect Maven and download all dependencies (JavaFX 25, MySQL connector) in the background.
+3. IntelliJ will automatically detect Maven and download all dependencies in the background.
 4. **"Run Application"** is pre-configured at the top toolbar!
 5. **Just click the green Run button (▶️)** — the app will build and launch immediately!
 
-### Option B: Using Terminal / Maven Wrapper (No Maven Install Required)
-If you don't even have Maven installed, use the included Maven Wrapper:
-
-- **Windows:**
-  ```cmd
-  mvnw.cmd javafx:run
-  ```
-- **macOS / Linux:**
-  ```bash
-  ./mvnw javafx:run
-  ```
+### Option C: Using Terminal / Maven Wrapper
+- **Windows:** `mvnw.cmd javafx:run`
+- **macOS / Linux:** `./mvnw javafx:run`
 
 ---
 
