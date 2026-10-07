@@ -16,6 +16,14 @@ bin/
 # VS Code
 .vscode/
 
+# Local portable JDK
+.jdk/
+
+# Embedded H2 Database
+tak_limited_db*
+*.mv.db
+*.trace.db
+
 # OS files
 .DS_Store
 Thumbs.db
