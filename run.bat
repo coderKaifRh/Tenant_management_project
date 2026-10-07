@@ -39,8 +39,8 @@ echo [OK] Java detected:
 java -version
 echo.
 
-REM 2. Check for MySQL Port 3306
-powershell -Command "$t = New-Object Net.Sockets.TcpClient; try { $t.Connect('127.0.0.1', 3306); Write-Host '[OK] MySQL server is running on port 3306.'; $t.Close() } catch { Write-Host '[WARNING] MySQL is not responding on port 3306. Make sure MySQL service is running and tak_limited database is imported via schema.sql.' -ForegroundColor Yellow }"
+REM 2. Check Database Engine
+powershell -Command "$t = New-Object Net.Sockets.TcpClient; try { $t.Connect('127.0.0.1', 3306); Write-Host '[OK] MySQL server detected on port 3306.' -ForegroundColor Green; $t.Close() } catch { Write-Host '[INFO] MySQL not detected. App will run in Zero-Setup mode using Embedded Database!' -ForegroundColor Cyan }"
 
 echo.
 echo Launching application via Maven Wrapper...

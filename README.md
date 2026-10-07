@@ -11,68 +11,60 @@ A full-featured desktop application built with **JavaFX** and **MySQL** for mana
 - 🔍 **Search & Filter:** Tenants can search available flats based on location, budget, and size.
 - 📑 **Booking System:** Tenants can instantly book available flats.
 - 🚚 **Transportation & Relocation Service:** Integrated booking for moving trucks and manpower with instant cost estimation.
-- 🗄️ **Persistent Database:** Backed by MySQL relational database.
+- 🗄️ **Dual Database Engine Support:** Automatically connects to MySQL if installed, or falls back to an **Embedded Zero-Setup Database** (no MySQL or server installation required!).
 
 ---
 
 ## 🛠️ Prerequisites
 
-Before running the application, make sure you have the following installed on your machine:
-
-1. **Java Development Kit (JDK):** JDK 21 or higher (JDK 25 recommended).
-2. **Apache Maven:** Maven 3.8+ (bundled with IntelliJ IDEA or standalone).
-3. **MySQL Server:** MySQL 8.0+ running on port `3306`.
+The **only** thing required to run this project is:
+- **Java Development Kit (JDK):** JDK 21 or higher (JDK 21, 23, or 25).
+*(No MySQL or IntelliJ IDEA installation is needed!)*
 
 ---
 
-## 🚀 Getting Started
+## ⚡ Quick Start (No IDE or Database Setup Needed!)
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/coderKaifRh/Tenant_management_project.git
-cd Tenant_management_project
-```
+### Step 1: Download or Clone
+- **Via Git:**
+  ```bash
+  git clone https://github.com/coderKaifRh/Tenant_management_project.git
+  cd Tenant_management_project
+  ```
+- **Or via Browser:** Click green **Code** button on GitHub -> **Download ZIP** -> Extract the folder.
 
-### 2. Set Up the Database
-Open MySQL Workbench, phpMyAdmin, or MySQL Command Line Client, and run the included [`schema.sql`](schema.sql) file:
+### Step 2: Double-Click to Run!
+- **Windows:** Just double-click **`run.bat`**
+- **macOS / Linux:** Run `./run.sh` in terminal
 
-```sql
-SOURCE schema.sql;
-```
-Or execute:
-```bash
-mysql -u root -p < schema.sql
-```
-This will create the `tak_limited` database along with all required tables (`users`, `owner_info`, `tenant_info`, `flats`, `flat_images`, `bookings`, `transport`).
-
-### 3. Configure Database Credentials
-Open `src/main/java/com/template/DBConnection.java`:
-```java
-private static final String DB_URL = System.getProperty("db.url", "jdbc:mysql://localhost:3306/tak_limited?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true");
-private static final String DB_USER = System.getProperty("db.user", "root");
-private static final String DB_PASSWORD = System.getProperty("db.password", "YOUR_MYSQL_PASSWORD");
-```
-Replace `YOUR_MYSQL_PASSWORD` with your local MySQL root password, OR pass it as a JVM argument when running:
-`-Ddb.password=your_password`
+> **That's it!** The launcher will automatically check Java, download required Maven libraries, set up the embedded database, and launch the UI window.
 
 ---
 
-## ▶️ Running the Application
+## 🖥️ Alternative Run Options
 
-### Option A: 1-Click Double-Click Run (No IDE / IntelliJ Needed! ⚡)
-- **Windows:** Simply double-click **`run.bat`**! It will verify Java, automatically download any missing dependencies, and launch the application immediately.
-- **macOS / Linux:** Run `./run.sh` in terminal.
+### Option A: Using IntelliJ IDEA (1-Click Run ▶️)
+1. Open IntelliJ IDEA and choose **Open**.
+2. Select the `Tenant_management_project` folder.
+3. IntelliJ will automatically detect Maven dependencies.
+4. Select **"Run Application"** from the top run configuration menu and click the green **Play (▶️)** button.
 
-### Option B: Using IntelliJ IDEA (1-Click Run ▶️)
-1. Open IntelliJ IDEA and select **Open**.
-2. Select the cloned `Tenant_management_project` folder (or open `pom.xml`).
-3. IntelliJ will automatically detect Maven and download all dependencies in the background.
-4. **"Run Application"** is pre-configured at the top toolbar!
-5. **Just click the green Run button (▶️)** — the app will build and launch immediately!
-
-### Option C: Using Terminal / Maven Wrapper
+### Option B: Using Terminal / Maven Wrapper
 - **Windows:** `mvnw.cmd javafx:run`
 - **macOS / Linux:** `./mvnw javafx:run`
+
+---
+
+## 🗄️ Database Options (Optional)
+By default, you **do not** need MySQL. The app will automatically initialize and store data in a persistent local embedded database (`tak_limited_db`).
+
+If you prefer to use **MySQL Server** (optional for power users):
+1. Start your local MySQL service (e.g., via XAMPP or MySQL Server).
+2. The app will auto-detect port 3306 and create the `tak_limited` database automatically on startup.
+3. You can also manually import [`schema.sql`](schema.sql) if needed:
+   ```bash
+   mysql -u root -p < schema.sql
+   ```
 
 ---
 
